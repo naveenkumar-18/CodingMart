@@ -4,11 +4,12 @@ if (localStorage.getItem('arr') == null) {
 if (localStorage.getItem('opt') == null) {
     localStorage.setItem('opt', '-Select-');
 }
-if (localStorage.getItem('arrSort') == null) {
-    localStorage.setItem('arrSort', '[0,0,0,0,0]');
-}
 var option = localStorage.getItem('opt');
 var item = JSON.parse(localStorage.getItem('arr'));
+
+if (localStorage.getItem('arrSort') == null) {
+    localStorage.setItem('arrSort', JSON.stringify(item));
+}
 var itemSort = JSON.parse(localStorage.getItem('arrSort'));
 const app = Vue.createApp({
     data() {
